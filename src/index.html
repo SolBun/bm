@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>BeasyModels</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body >
+  <app-root ></app-root>
+  <!-- Это пока по приколу РАДИ ТЕСТА!!! -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+  $('.step').click(function () {
+    $(this).addClass('active').prevAll().addClass('active');
+    $(this).nextAll().removeClass('active');
+  });
+
+  $('.step01').click(function () {
+    $('#line-progress').css('width', '3%');
+    $('.January').addClass('active').siblings().removeClass('active');
+  });
+
+  $('.step02').click(function () {
+    $('#line-progress').css('width', '25%');
+    $('.February').addClass('active').siblings().removeClass('active');
+  });
+
+  $('.step03').click(function () {
+    $('#line-progress').css('width', '50%');
+    $('.March').addClass('active').siblings().removeClass('active');
+  });
+
+  $('.step04').click(function () {
+    $('#line-progress').css('width', '75%');
+    $('.April').addClass('active').siblings().removeClass('active');
+  });
+
+  $('.step05').click(function () {
+    $('#line-progress').css('width', '100%');
+    $('.May').addClass('active').siblings().removeClass('active');
+  });
+</script>
+
+<!-- Это пока по приколу РАДИ ТЕСТА!!! -->
+</body>
+</html>
+

@@ -1,0 +1,976 @@
+<!-- cards_of_key_partners: any[] = []; //0 Партнеры
+  cards_of_key_actions: any[] = [];//1 Виды деятельности
+  cards_of_key_resources: any[] = [];//2 Ресурсы
+  cards_of_value_proposition: any[] = [];//3 Ценности
+  cards_of_customer_relationships: any[] = [];//4 Отношения с покупателями
+  cards_of_channels: any[] = [];//5 Каналы сбыта
+  cards_of_customer_segments: any[] = [];//6 Покупатели
+  cards_of_cost_structure: any[] = [];//7 Затраты
+  cards_of_income_streams: any[] = [];//8 Доходы-->
+
+<!-- Партнеры-->
+<mat-menu class="menu_list" #group_0="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_0_0" (contextmenu)="addGroup(['Старая','Новая группа'])"
+    (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_0_0="matMenu">
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Стратегическое сотрудничество между неконкурирующими компаниями'])">Стратегическое
+      сотрудничество между неконкурирующими компаниями</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Соконкуренция'])">Соконкуренция</button>
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Совместные предприятия для запуска новых бизнес-проектов'])">Совместные предприятия для
+      запуска новых бизнес-проектов</button>
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Отношения производителя с поставщиками для гарантии получения качественных комплектующих'])">Отношения
+      производителя с поставщиками для гарантии получения качественных комплектующих</button>
+  </mat-menu>
+</mat-menu>
+
+
+<!--Виды деятельности -->
+<mat-menu class="menu_list" #group_1="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_1_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_1_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Производство'])">Производство</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Разрешение проблемы'])">Разрешение проблемы</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Платформы и сети'])">Платформы и сети</button>
+  </mat-menu>
+</mat-menu>
+
+<!-- ключевые ресурсы -->
+<mat-menu class="menu_list" #group_2="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_2_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_2_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_2_0_0"
+      (click)="addGroup(['Материальные'])">Материальные</button>
+    <mat-menu #group_2_0_0="matMenu">
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Материальные','Сырье'])">Сырье</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Материальные','Материалы'])">Материалы</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Материальные','Полуфабрикаты и комплектующие'])">Полуфабрикаты и комплектующие</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Материальные','Энергетические ресурсы'])">Энергетические ресурсы</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Материальные','Транспорт'])">Транспорт</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Материальные','Отходы производства'])">Отходы
+        производства</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_2_0_1"
+      (click)="addGroup(['Интеллектуальные'])">Интеллектуальные</button>
+    <mat-menu #group_2_0_1="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Интеллектуальные','Отношенческие ресурсы'])">Отношенческие ресурсы</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Интеллектуальные','Человеческие ресурсы'])">Человеческие ресурсы</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Интеллектуальные','Организационные ресурсы'])">Организационные ресурсы</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_2_0_2"
+      (click)="addGroup(['Людские'])">Людские</button>
+    <mat-menu #group_2_0_2="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Людские','Производственный персонал'])">Производственный персонал</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Людские','Управленческий персонал'])">Управленческий персонал</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_2_0_3"
+      (click)="addGroup(['Финансовые'])">Финансовые</button>
+    <mat-menu #group_2_0_3="matMenu">
+      <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_2_0_3_0"
+        (click)="addGroup(['Финансовые','Собственные источники финансирования'])">Собственные источники
+        финансирования</button>
+      <mat-menu #group_2_0_3_0="matMenu">
+        <button mat-menu-item class="sub-menu_link"
+          (click)="addGroup(['Финансовые','Собственные источники финансирования','Внешние'])">Внешние</button>
+        <button mat-menu-item class="sub-menu_link"
+          (click)="addGroup(['Финансовые','Собственные источники финансирования','Внутренние'])">Внутренние</button>
+      </mat-menu>
+      <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_2_0_3_1"
+        (click)="addGroup(['Финансовые','Заемные источники финансирования'])">Заемные источники финансирования</button>
+      <mat-menu #group_2_0_3_1="matMenu">
+        <button mat-menu-item class="sub-menu_link"
+          (click)="addGroup(['Финансовые','Заемные источники финансирования','Долгосрочные кредиты'])">Долгосрочные
+          кредиты</button>
+        <button mat-menu-item class="sub-menu_link"
+          (click)="addGroup(['Финансовые','Заемные источники финансирования','Краткосрочные кредиты'])">Краткосрочные
+          кредиты</button>
+      </mat-menu>
+    </mat-menu>
+  </mat-menu>
+</mat-menu>
+
+<!--ценности -->
+<mat-menu class="menu_list" #group_3="matMenu">
+  <!--ценности -->
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_3_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_3_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Первичное ценностное предложение'])">Первичное
+      ценностное предложение</button>
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Ценностное предложение на уровне потенциального клиента'])">Ценностное предложение на уровне
+      потенциального клиента</button>
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Ценностное предложение на уровне продукта'])">Ценностное предложение на уровне
+      продукта</button>
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Ценностное предложение на уровне процесса'])">Ценностное предложение на уровне
+      процесса</button>
+  </mat-menu>
+</mat-menu>
+
+<!-- Отношения с покупателями -->
+<mat-menu class="menu_list" #group_4="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_4_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_4_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Персональная поддержка'])">Персональная
+      поддержка</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Особая персональная поддержка'])">Особая
+      персональная поддержка</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Самообслуживание'])">Самообслуживание</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Сообщества'])">Сообщества</button>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Совместное создание'])">Совместное создание</button>
+    <button mat-menu-item class="sub-menu_link"
+      (click)="addGroup(['Автоматизированное обслуживание'])">Автоматизированное обслуживание</button>
+  </mat-menu>
+</mat-menu>
+
+<!-- Каналы сбыта -->
+<mat-menu class="menu_list" #group_5="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_5_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_5_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Прямые'])">Прямые</button>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_5_0_0"
+      (click)="addGroup(['Косвенные'])">Косвенные</button>
+    <mat-menu #group_5_0_0="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Косвенные','Одноуровневый'])">Одноуровневый</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Косвенные','Двухуровневый'])">Двухуровневый</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Косвенные','Трёх и более'])">Трёх и более</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Косвенные','Короткий (1-2 посредника)'])">Короткий
+        (1-2 посредника)</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Косвенные','Длинный (более 2х)'])">Длинный (более
+        2х)</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Комбинированные'])">Комбинированные</button>
+  </mat-menu>
+</mat-menu>
+
+<!-- Покупатели -->
+<mat-menu class="menu_list" #group_6="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_6_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_6_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_6_0_0"
+      (contextmenu)="addGroup(['Старая','Новая группа'])" (click)="addGroup(['B2B'])">B2B</button>
+    <mat-menu #group_6_0_0="matMenu">
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2B','География'])">География</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2B','Отрасль'])">Отрасль</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2B','Масштаб деятельности'])">Масштаб
+        деятельности</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2B','Канал сбыта'])">Канал сбыта</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_6_0_1"
+      (click)="addGroup(['B2C'])">B2C</button>
+    <mat-menu #group_6_0_1="matMenu">
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2C','География'])">География</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2C','Канал сбыта'])">Канал сбыта</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2C','Половозрастные признаки'])">Масштаб
+        деятельности</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2C','Соц.группы'])">Соц.группы</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2C','Уровень дохода'])">Уровень дохода</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_6_0_2"
+      (click)="addGroup(['B2G'])">B2G</button>
+    <mat-menu #group_6_0_2="matMenu">
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2G','География'])">География</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['B2G','Сфера деятельности'])">Сфера
+        деятельности</button>
+    </mat-menu>
+  </mat-menu>
+</mat-menu>
+
+<!-- Затраты-->
+<mat-menu class="menu_list" #group_7="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_7_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_7_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_7_0_0"
+      (click)="addGroup(['Внутренние'])">Внутренние</button>
+    <mat-menu #group_7_0_0="matMenu">
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Внутренние','Нормальная прибыль'])">Нормальная
+        прибыль</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Внутренние','Сумма потенциальных трат на эксплуатацию предметов и объектов, принадлежащих владельцу'])">Сумма
+        потенциальных трат на эксплуатацию предметов и объектов, принадлежащих владельцу</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_7_0_1"
+      (click)="addGroup(['Внешние'])">Внешние</button>
+    <mat-menu #group_7_0_1="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Внешние','Расходы на приобретение сырья (связано с материальными ресурсами)'])">Расходы на
+        приобретение сырья (связано с материальными ресурсами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Внешние','Расходы на амортизацию (связано с материальными ресурсами)'])">Расходы на
+        амортизацию (связано с материальными ресурсами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Внешние','Оплата труда сотрудников (связано с людскими ресурсами)'])">Оплата труда
+        сотрудников (связано с людскими ресурсами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Внешние','Погашение процентов по кредитам'])">Погашение процентов по кредитам</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Внешние','Расходы на услуги сторонних фирм (связано с ключевыми партнёрами'])">Расходы на
+        услуги сторонних фирм (связано с ключевыми партнёрами</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Внешние','Транспортные затраты'])">Транспортные
+        затраты</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_7_0_2"
+      (click)="addGroup(['Постоянные'])">Постоянные</button>
+    <mat-menu #group_7_0_2="matMenu">
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Постоянные','Арендная плата'])">Арендная
+        плата</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Постоянные','Оплата труда управленческого и административного аппарата (связано с людскими ресурсами)'])">Оплата
+        труда управленческого и административного аппарата (связано с людскими ресурсами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Постоянные','Амортизация имущества (связано с материальными ресурсами)'])">Амортизация
+        имущества (связано с материальными ресурсами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Постоянные','Затраты на банковское обслуживание, бухгалтерские услуги, аудит, юридические консультации'])">Затраты
+        на банковское обслуживание, бухгалтерские услуги, аудит, юридические консультации</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Постоянные','Коммунальные расходы'])">Коммунальные
+        расходы</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Постоянные','Проценты по кредитам (связано с финансовыми ресурсами)'])">Проценты по кредитам
+        (связано с финансовыми ресурсами)</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_7_0_3"
+      (click)="addGroup(['Переменные'])">Переменные</button>
+    <mat-menu #group_7_0_3="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Переменные','Расходы на приобретение сырья (связано с материальными ресурсами)'])">Расходы
+        на приобретение сырья (связано с материальными ресурсами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Переменные','Оплата труда сотрудников (если сдельная, связано с людскими ресурсами'])">Оплата
+        труда сотрудников (если сдельная, связано с людскими ресурсами</button>
+      <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Переменные','Издержки на доставку'])">Издержки на
+        доставку</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Переменные','Расходы на услуги сторонних фирм (связано с ключевыми партнёрами)'])">Расходы
+        на услуги сторонних фирм (связано с ключевыми партнёрами)</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Переменные','Расходы на электроэнергию и топливо (связано с материальными ресурсами'])">Расходы
+        на электроэнергию и топливо (связано с материальными ресурсами</button>
+    </mat-menu>
+  </mat-menu>
+</mat-menu>
+
+<!-- Доходы -->
+<mat-menu class="menu_list" #group_8="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item [matMenuTriggerFor]="group_8_0" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <mat-menu #group_8_0="matMenu">
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_8_0_0"
+      (click)="addGroup(['Способы создания потоков'])">Способы создания потоков</button>
+    <mat-menu #group_8_0_0="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Продажа активов'])">Продажа активов</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Оплата подписки'])">Оплата подписки</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Брокерские проценты'])">Брокерские проценты</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Реклама'])">Реклама</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Доход за использование'])">Доход за использование</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Доход за аренду, ренту или лизинг'])">Доход за аренду, ренту
+        или лизинг</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Способы создания потоков','Доход за лицензию'])">Доход за лицензию</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_8_0_1"
+      (click)="addGroup(['Ценообразование фиксированное'])">Ценообразование фиксированное</button>
+    <mat-menu #group_8_0_1="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование фиксированное','Цена по прейскуранту'])">Цена по прейскуранту</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование фиксированное','Цена в зависимости от функционала'])">Цена в зависимости
+        от функционала</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование фиксированное','Цена в зависимости от объёма'])">Цена в зависимости от
+        объёма</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование фиксированное','Цена в зависимости от типа клиента'])">Цена в зависимости
+        от типа клиента</button>
+    </mat-menu>
+    <button mat-menu-item class="sub-menu_link" [matMenuTriggerFor]="group_8_0_2"
+      (click)="addGroup(['Ценообразование динамическое'])">Ценообразование динамическое</button>
+    <mat-menu #group_8_0_2="matMenu">
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование динамическое','Переговоры и торги'])">Переговоры и торги</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование динамическое','Управление активами'])">Управление активами</button>
+      <button mat-menu-item class="sub-menu_link"
+        (click)="addGroup(['Ценообразование динамическое','Маркетинг в реальном времени'])">Маркетинг в реальном
+        времени</button>
+    </mat-menu>
+  </mat-menu>
+</mat-menu>
+
+
+<mat-menu class="menu_list" #menu="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группы</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить</button>
+  <button mat-menu-item>
+    <span (click)="returnLastBoard()">Вернуть в исходный вид</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="sub_menu">
+    <!-- <span (click)="compareBoard(el,el)">Проследить изменения</span> --> -->
+    <!-- <span>Проследить изменения</span> -->
+    <mat-menu #sub_menu="matMenu" yPosition="below" xPosition="before">
+      <div (click)="$event.stopPropagation()">
+        <!-- <span mat-menu-item disabled> Введите начальную дату</span>
+        <input mat-menu-item type="date" [(ngModel)]="begin_date"> -->
+        <span mat-menu-item>
+          <mat-form-field appearance="fill">
+            <mat-label>Первый фрагмент</mat-label>
+            <mat-select [(ngModel)]="select_first" name="first">
+              <!-- <mat-option *ngFor="let item of fragmentsBoards;let i=index" [value]="i">
+                {{ item.date| date: 'dd.MM.yyyy' }}
+              </mat-option> -->
+            </mat-select>
+          </mat-form-field>
+
+        </span>
+        <span mat-menu-item>
+          <mat-form-field appearance="fill">
+            <mat-label>Второй фрагмент</mat-label>
+            <mat-select [(ngModel)]="select_second" name="second">
+              <!-- <mat-option *ngFor="let item of fragmentsBoards;let i=index" [disabled]="select_first==i" [value]="i">
+                {{ item.date| date: 'dd.MM.yyyy' }}
+              </mat-option> -->
+            </mat-select>
+          </mat-form-field>
+        </span>
+        <!-- <span mat-menu-item>
+          <mat-select [(ngModel)]="select_first" >
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+            <mat-option *ngFor="let item of fragmentsBoards" [value]="item.date">
+              {{item.date}}
+            </mat-option>
+          </mat-select>
+        </span> -->
+        <!-- <span mat-menu-item disabled> Введите конечную дату</span>
+        <input mat-menu-item type="date" [(ngModel)]="end_date"> -->
+        <!-- НАЗЫВАЙТЕ МЕНЯ СебАстьян-ус-трусссс... -->
+      </div>
+      <button mat-menu-item (click)="compareBoard()"> Выполнить</button>
+      <!-- <span>Введите начальную дату</span> -->
+
+    </mat-menu>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>
+
+
+
+<mat-menu class="menu_list" #menu_with_group="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавить карточку</button>
+  <!-- <button mat-menu-item class="sub-menu_link" (click)="deleteBlock()">Очистить</button> -->
+  <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteGroup()">Удалить группу</button>
+  <button mat-menu-item class="sub-menu_link" (click)="clearCardsInGroup()">Очистить группу</button>
+  <button mat-menu-item class="sub-menu_link" (click)="compareCardsInBlocks()">Очистить блок</button>
+  <button mat-menu-item>
+    <span (click)="returnLastBoard()">Вернуть в исходный вид</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="sub_menu">
+    <!-- <span (click)="compareBoard(el,el)">Проследить изменения</span> -->
+    <span>Проследить изменения</span>
+    <mat-menu #sub_menu="matMenu" yPosition="below" xPosition="before">
+      <div (click)="$event.stopPropagation()">
+        <span mat-menu-item disabled> Введите начальную дату</span>
+        <input mat-menu-item type="date" [(ngModel)]="begin_date">
+        <span mat-menu-item disabled> Введите конечную дату</span>
+        <input mat-menu-item type="date" [(ngModel)]="end_date">
+        <!-- НАЗЫВАЙТЕ МЕНЯ СебАстьян-ус-трусссс... -->
+      </div>
+      <button mat-menu-item (click)="compareBoard()"> Выполнить</button>
+      <!-- <span>Введите начальную дату</span> -->
+
+    </mat-menu>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>
+
+<mat-menu class="menu_list" #group="matMenu">
+  <button mat-menu-item class="sub-menu_link" (click)="addGroup(['Новая группа'])">Создать группу</button>
+  <button mat-menu-item class="sub-menu_link" (click)="deleteAllGroups()">Очистить блок</button>
+  <button mat-menu-item class="sub-menu_link" (click)="addCard()">Добавься пжл🙏</button>
+</mat-menu>
+
+
+<ng-template #recursiveAddCards let-cards="cards" let-id_block="id_block">
+  <ng-container *ngFor="let elem of cards; let i = index">
+    <ng-container *ngIf="elem.group_name == undefined; else createGroup">
+      <div class="card " [ngClass]="{'donotdrag': !(boardServer.iAdmin ||(elem.name === boardServer.user_name))}">
+        <!-- <h3 class="name">{{elem.id_card}}</h3> -->
+        <h3 class="name">{{elem.name}}</h3>
+        <div class="text_block" *ngIf="!elem.show_text">
+          <textarea autosize [minRows]="1" [(ngModel)]="elem.text"
+            (keydown.control.enter)="save_card(elem.id_card,id_block)" [attr.id]="elem.id_card"></textarea>
+          <div class="wrap_btn">
+            <article class="btn_ok" (click)="save_card(elem.id_card,id_block)">Сохранить</article>
+            <article class="btn_del" (click)="delete_card(elem.id_card,id_block)">Удалить</article>
+          </div>
+        </div>
+        <div class="text_block" *ngIf="elem.show_text">
+          <p class="text" (click)="found_and_push(elem.id_card,id_block)">
+            {{ elem.text }}
+          </p>
+          <span class="time">{{ elem.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #createGroup>
+      <div class="card_block_">
+        <div class="title_wrap">
+          <ng-container *ngIf="!elem.show_text; else showTitle">
+            <textarea autosize [minRows]="1" [(ngModel)]="elem.group_name"
+              (keydown.control.enter)="save_title(elem.id_group,id_block)" [attr.id]="elem.id_group"></textarea>
+            <mat-icon class="save_icon" (click)="save_title(elem.id_group,id_block)">done</mat-icon>
+          </ng-container>
+          <ng-template #showTitle>
+            <h3 class="card_block_title" (click)="change_title(elem.id_group,id_block)">{{elem.group_name}}</h3>
+          </ng-template>
+          <!-- <h3 class="card_block_title">{{elem.id_group}}!!!</h3> -->
+          <mat-icon class="menu_icon" [matMenuTriggerFor]="group_1" (click)="setCurrentID(elem.id_group,id_block)">
+            more_horiz</mat-icon>
+        </div>
+        <div class="card_block" [dragula]='"id_block_"+id_block' [(dragulaModel)]="elem.group_cards">
+          <ng-container [ngTemplateOutlet]="recursiveAddCards"
+            [ngTemplateOutletContext]="{ cards: elem.group_cards, id_block:id_block }"></ng-container>
+        </div>
+      </div>
+    </ng-template>
+
+  </ng-container>
+</ng-template>
+
+<ng-template #createBlock let-list="list" let-name="name_block" let-id_block="id_block" let-id_menu="id_menu">
+  <div class="title_wrap">
+    <h3 class="title_block" (click)="compareCardsInBlocks()">{{name}}</h3>
+    <!-- <h3 class="title_block" (click)="compareCardsInBlocks()">{{id_menu}}</h3> -->
+    <ng-container [ngSwitch]="id_block">
+      <mat-icon class="menu_icon" *ngSwitchCase="0" [matMenuTriggerFor]="group_0" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="1" [matMenuTriggerFor]="group_1" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="2" [matMenuTriggerFor]="group_2" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="3" [matMenuTriggerFor]="group_3" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="4" [matMenuTriggerFor]="group_4" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="5" [matMenuTriggerFor]="group_5" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="6" [matMenuTriggerFor]="group_6" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="7" [matMenuTriggerFor]="group_7" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+      <mat-icon class="menu_icon" *ngSwitchCase="8" [matMenuTriggerFor]="group_8" (click)="setCurrentBlock(id_block)">
+        more_horiz</mat-icon>
+    </ng-container>
+  </div>
+  <ng-container *ngFor="let item of list; let i=index">
+    <div class="card_block">
+      <div class="card_block_" *ngIf="item.group_name != undefined; else onlyCards">
+        <div class="title_wrap">
+
+          <ng-container *ngIf="!item.show_text; else showTitle_1">
+            <textarea autosize [minRows]="1" [(ngModel)]="item.group_name"
+              (keydown.control.enter)="save_title(item.id_group,id_block)" [attr.id]="item.id_group"></textarea>
+            <mat-icon class="save_icon" (click)="save_title(item.id_group,id_block)">done</mat-icon>
+          </ng-container>
+          <ng-template #showTitle_1>
+            <h3 class="card_block_title" (click)="change_title(item.id_group,id_block)">{{item.group_name}}</h3>
+          </ng-template>
+
+          <mat-icon class="menu_icon" [matMenuTriggerFor]="menu_with_group"
+            (click)="setCurrentID(item.id_group,id_block)">more_horiz</mat-icon>
+        </div>
+        <div class="card_block" [dragula]='"id_block_"+id_block' [(dragulaModel)]="item.group_cards">
+          <ng-container [ngTemplateOutlet]="recursiveAddCards"
+            [ngTemplateOutletContext]="{cards: item.group_cards, id_block:id_block}"></ng-container>
+        </div>
+      </div>
+      <ng-template #onlyCards>
+        <div class="card_block" [dragula]='"id_block_"+id_block' [(dragulaModel)]="item.group_cards">
+          <ng-container [ngTemplateOutlet]="recursiveAddCards"
+            [ngTemplateOutletContext]="{cards: item.group_cards, id_block:id_block}"></ng-container>
+        </div>
+      </ng-template>
+    </div>
+
+  </ng-container>
+  <!-- <div class="add_card" (click)="addCard(0)">Добавить карточку</div> -->
+
+</ng-template>
+
+
+
+
+<div class="header1" (click)="createFragment()">
+  <h1>Название Бизнес-модели </h1>
+</div>
+<table class="canva unselectable" id="content" >
+  <tr>
+    <td rowspan="2" class="container">
+      <!-- <div class="title_wrap">
+        <h3 class="title_block" (click)="compareCardsInBlocks()">Партнеры</h3>
+        <mat-icon class="menu_icon" [matMenuTriggerFor]="group" (click)="setCurrentBlock(0)">more_horiz</mat-icon>
+      </div> -->
+
+      <!-- О дааа эта срань заработала!!! А теперь.... Это надо применить ко всем блокам😭😭😭 -->
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_key_partners,name_block:'Партнеры', id_block:0, id_menu:'group_0' }">
+      </ng-container>
+
+
+
+      <!-- 
+        <div class="card_block_0" *ngFor="let elem_1_block of cards_of_key_partners;">
+          <div class="card_block_1" *ngIf="elem_1_block.group_name=undefined">
+            <div class="card" *ngFor="let el of elem_1_block.group_cards; let i = index">
+              <h3 class="name">{{ el.name }}</h3>
+              <div class="text_block" *ngIf="!el.show_text">
+                <textarea autosize [minRows]="1" [(ngModel)]="el.text" (keydown.control.enter)="onCtrlEnter(i, 1)"
+                  [attr.id]="el.date"></textarea>
+                <div class="wrap_btn">
+                  <article class="btn_ok" (click)="onCtrlEnter(i, 1)">Сохранить</article>
+                  <article class="btn_del" (click)="deleteCard(i, 1)">Удалить</article>
+                </div>
+              </div>
+              <div class="text_block" *ngIf="el.show_text">
+                <p class="text" (click)="changeText(i, 1)">
+                  {{ el.text }}
+                </p>
+                <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="card_block_1" *ngIf="elem_1_block.group_name!=undefined">
+            <div class="title_wrap">
+              <h3 class="card_block_title">{{elem_1_block.group_name}}</h3>
+              <mat-icon class="menu_icon" [matMenuTriggerFor]="menu" (click)="setCurrentBlock(0)">more_horiz</mat-icon>
+            </div>
+            <div class="card_block" *ngIf="el.group_name!=undefined">
+              <div class="title_wrap">
+                <h3 class="card_block_title">{{el.group_name}}</h3>
+                <mat-icon class="menu_icon" [matMenuTriggerFor]="menu" (click)="setCurrentBlock(0)">more_horiz</mat-icon>
+              </div>
+              <div class="card" *ngFor="let el_1 of el.group_cards; let i = index">
+                <h3 class="name">{{ el_1.name }}</h3>
+                <div class="text_block" *ngIf="!el_1.show_text">
+                  <textarea autosize [minRows]="1" [(ngModel)]="el_1.text" (keydown.control.enter)="onCtrlEnter(i, 0)"
+                    [attr.id]="el_1.date"></textarea>
+                  <div class="wrap_btn">
+                    <article class="btn_ok" (click)="onCtrlEnter(i, 0)">Сохранить</article>
+                    <article class="btn_del" (click)="deleteCard(i, 0)">Удалить</article>
+                  </div>
+                </div>
+                <div class="text_block" *ngIf="el_1.show_text">
+                  <p class="text" (click)="changeText(i, 0)">
+                    {{ el_1.text }}
+                  </p>
+                  <span class="time">{{ el_1.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+                </div>
+              </div>
+            </div>
+              <div class="card_block_2">
+  
+              </div>
+          </div>
+          <div class="title_wrap" *ngIf="elem_block.group_name!=undefined">
+            <h3 class="card_block_title">{{elem_block.group_name}}</h3>
+            <mat-icon class="menu_icon" [matMenuTriggerFor]="menu" (click)="setCurrentBlock(0)">more_horiz</mat-icon>
+          </div>
+          <div class="" *ngFor="let el of elem_block.group_cards; let i = index">
+            <div class="card_block" *ngIf="el.group_name!=undefined">
+              <div class="title_wrap">
+                <h3 class="card_block_title">{{el.group_name}}</h3>
+                <mat-icon class="menu_icon" [matMenuTriggerFor]="menu" (click)="setCurrentBlock(0)">more_horiz</mat-icon>
+              </div>
+              <div class="card" *ngFor="let el_1 of el.group_cards; let i = index">
+                <h3 class="name">{{ el_1.name }}</h3>
+                <div class="text_block" *ngIf="!el_1.show_text">
+                  <textarea autosize [minRows]="1" [(ngModel)]="el_1.text" (keydown.control.enter)="onCtrlEnter(i, 0)"
+                    [attr.id]="el_1.date"></textarea>
+                  <div class="wrap_btn">
+                    <article class="btn_ok" (click)="onCtrlEnter(i, 0)">Сохранить</article>
+                    <article class="btn_del" (click)="deleteCard(i, 0)">Удалить</article>
+                  </div>
+                </div>
+                <div class="text_block" *ngIf="el_1.show_text">
+                  <p class="text" (click)="changeText(i, 0)">
+                    {{ el_1.text }}
+                  </p>
+                  <span class="time">{{ el_1.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="card" *ngIf="el.group_name=undefined">
+              <h3 class="name">{{ el.name }}</h3>
+              <div class="text_block" *ngIf="!el.show_text">
+                <textarea autosize [minRows]="1" [(ngModel)]="el.text" (keydown.control.enter)="onCtrlEnter(i, 0)"
+                  [attr.id]="el.date"></textarea>
+                <div class="wrap_btn">
+                  <article class="btn_ok" (click)="onCtrlEnter(i, 0)">Сохранить</article>
+                  <article class="btn_del" (click)="deleteCard(i, 0)">Удалить</article>
+                </div>
+              </div>
+              <div class="text_block" *ngIf="el.show_text">
+                <p class="text" (click)="changeText(i, 0)">
+                  {{ el.text }}
+                </p>
+                <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+        <div class="compare_cards" *ngIf="!this.test_compare">
+          <div class="card_block right_line">
+            <div class="card red" *ngFor="let el of this.fragmentsBoards[0].values[0]; let i = index">
+              <h3 class="name">{{ el.name }}</h3>
+              <div class="text_block">
+                <p class="text">
+                  {{ el.text }}
+                </p>
+                <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+              </div>
+            </div>
+            <div class="card yel">
+              <h3 class="name">"Тест"</h3>
+              <div class="text_block">
+                <p class="text">Тестируем!!!</p>
+                <span class="time">{{ 21635273 | date: 'dd.MM.yyyy HH:mm' }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="card_block">
+            <div class="card green" *ngFor="let el of this.fragmentsBoards[1].values[0]; let i = index">
+              <h3 class="name">{{ el.name }}</h3>
+              <div class="text_block">
+                <p class="text">
+                  {{ el.text }}
+                </p>
+                <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+              </div>
+            </div>
+            <div class="card yel">
+              <h3 class="name">"Тест"</h3>
+              <div class="text_block">
+                <p class="text">Тестируем!!!</p>
+                <span class="time">{{ 21635273 | date: 'dd.MM.yyyy HH:mm' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>-->
+
+
+
+      <!-- ВАЖНО !!!!!!!!!!!!!!!!!!!!!!!! -->
+      <!-- <div class="compare_cards">
+        <div class="card_block right_line">
+          <div class="card red" *ngFor="let el of this.fragmentsBoards[0].values[0]; let i = index">
+            <h3 class="name">{{ el.name }}</h3>
+            <div class="text_block">
+              <p class="text">
+                {{ el.text }}
+              </p>
+              <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+            </div>
+          </div>
+          <div class="card yel">
+            <h3 class="name">"Тест"</h3>
+            <div class="text_block">
+              <p class="text">Тестируем!!!</p>
+              <span class="time">{{ 21635273 | date: 'dd.MM.yyyy HH:mm' }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card_block">
+          <div class="card green" *ngFor="let el of this.fragmentsBoards[1].values[0]; let i = index">
+            <h3 class="name">{{ el.name }}</h3>
+            <div class="text_block">
+              <p class="text">
+                {{ el.text }}
+              </p>
+              <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+            </div>
+          </div>
+          <div class="card yel">
+            <h3 class="name">"Тест"</h3>
+            <div class="text_block">
+              <p class="text">Тестируем!!!</p>
+              <span class="time">{{ 21635273 | date: 'dd.MM.yyyy HH:mm' }}</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- ВАЖНО !!!!!!!!!!!!!!!!!!!!!!!! -->
+    </td>
+
+    <td class="container">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_key_actions, name_block:'Виды деятельности', id_block:1, id_menu:'group_1' }">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(1)">Добавить карточку</div> -->
+    </td>
+    <td rowspan="2" colspan="2" [ngClass]="{
+      td1: test,
+      td2: !test}">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_value_proposition, name_block:'Ценности', id_block:3, id_menu:'group_3' }">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(3)">Добавить карточку</div> -->
+    </td>
+    <td [ngClass]="{
+      td1: test,
+      td2: !test}">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_customer_relationships, name_block:'Отношения с покупателями', id_block:4, id_menu:'group_4' }">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(4)">Добавить карточку</div> -->
+    </td>
+
+    <td rowspan="2">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_customer_segments, name_block:'Покупатели', id_block:6, id_menu:'group_6' }">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(6)">Добавить карточку</div> -->
+    </td>
+  </tr>
+  <tr>
+    <td [ngClass]="{
+      td1: test,
+      td2: !test}">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_key_resources, name_block:'Ресурсы', id_block:2 , id_menu:'group_2'}">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(2)">Добавить карточку</div> -->
+    </td>
+    <td [ngClass]="{
+      td1: test,
+      td2: !test}">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_channels, name_block:'Каналы сбыта', id_block:5, id_menu:'group_5' }">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(5)">Добавить карточку</div> -->
+    </td>
+  </tr>
+  <tr>
+  <td colspan="3" [ngClass]="{
+    td1: test,
+    td2: !test}">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_cost_structure, name_block:'Затраты', id_block:7, id_menu:'group_7' }">
+      </ng-container>
+      <!-- <div class="add_card" (click)="addCard(7)">Добавить карточку</div> -->
+    </td>
+    <td colspan="3" [ngClass]="{
+      td1: test,
+      td2: !test}">
+      <ng-container [ngTemplateOutlet]="createBlock"
+        [ngTemplateOutletContext]="{ list: cards_of_income_streams, name_block:'Доходы', id_block:8, id_menu:'group_8' }">
+      </ng-container>
+
+  <!-- <div class="card_block" dragula="segments" [(dragulaModel)]="cards_of_income_streams">
+        <div class="card" *ngFor="let el of cards_of_income_streams; let i = index">
+          <h3 class="name">{{ el.name }}</h3>
+          <div class="text_block" *ngIf="!el.show_text">
+            <textarea autosize [minRows]="1" [(ngModel)]="el.text" (keydown.control.enter)="onCtrlEnter(i, 8)"
+              [attr.id]="el.date"></textarea>
+            <div class="wrap_btn">
+              <article class="btn_ok" (click)="onCtrlEnter(i, 8)">Сохранить</article>
+              <article class="btn_del" (click)="deleteCard(i, 8)">Удалить</article>
+            </div>
+          </div>
+          <div class="text_block" *ngIf="el.show_text">
+            <p class="text" (click)="changeText(i, 8)">
+              {{ el.text }}
+            </p>
+            <span class="time">{{ el.date | date: 'dd.MM.yyyy HH:mm' }}</span>
+          </div>
+        </div>
+      </div> -->
+  <!-- <div class="add_card" (click)="addCard(8)">Добавить карточку</div> -->
+    </td>
+  </tr>
+</table>
+<button (click)="export_PNG()" (keydown)="test = false" (keyup)="test=true">Эскорт в PNG</button>
+<!-- <button (click)="give_test()">Дай карточки в 1 блок</button> -->
+
+<!-- </pinch-zoom> -->
+<!-- <div class="btn_ok" (click)="saveBoard()">Кнопочка</div>
+  
+  <div class="" *ngFor="let b of boards">
+  {{ b.date | date: 'dd.MM.yyyy HH:mm' }}
+  </div> -->
+
+
+<!-- <h1>Трекер изменений</h1>
+  <br />
+  <div class="process-wrapper">
+    <div id="progress-bar-container">
+      <ul>
+        <li class="step step01 active"><div class="step-inner">Январь</div></li>
+        <li class="step step02"><div class="step-inner">Февраль</div></li>
+        <li class="step step03"><div class="step-inner">Март</div></li>
+        <li class="step step04"><div class="step-inner">Апрель</div></li>
+        <li class="step step05"><div class="step-inner">Май</div></li>
+      </ul>
+  
+      <div id="line">
+        <div id="line-progress"></div>
+      </div>
+    </div> -->
+<!-- <script>
+  document.getElementById("foc").focus();
+  </script> -->
+
+<!-- </pinch-zoom> -->
+
+
+
+
+
+
+<!-- Трекер -->
+<!-- <h1>Трекер изменений</h1>
+
+<br />
+<div class="process-wrapper">
+  <div id="progress-bar-container">
+    <ul>
+      <li class="step active" *ngFor="let item of fragmentsBoards; let i=index;" (click)="setCurrentFragment(i)">
+        <div class="step-inner">{{ item.date| date: 'dd.MM.yyyy' }}</div>
+      </li>
+    </ul>
+
+    <div id="line">
+      <div id="line-progress"></div>
+    </div>
+  </div>
+</div> -->
+
+<!-- конец трекера -->
+  <!-- <div id="progress-content-section">
+      <div class="section-content January active">
+          <h2>Январь</h2>
+          <p>Покупатели: Добавлена карточка "Провести анализ конкурентов"</p>
+      </div>
+      
+      <div class="section-content February">
+          <h2>Февраль</h2>
+          <p>Ресурсы: добавлена карточка "Обзвонить базу помощи"</p>
+      </div>
+      
+      <div class="section-content March">
+          <h2>Март</h2>
+          <p>Ценности: добавлена карточка "Сформировать основные ценности проекта"</p>
+      </div>
+    
+      <div class="section-content April">
+          <h2>Апрель</h2>
+          <p>Виды деятельности: добавлена карточка "Определиться с направлением деятельности"</p>
+      </div>
+      <div class="section-content May">
+          <h2>Май</h2>
+          <p>Ресурсы: удалена карточка "Обзвонить базу помощи"</p>
+      </div>
+      
+      </div>
+    </div> -->
+
+
+<!-- 
+  
+  <nav class="main_menu">
+    <ul class="main_title"></ul>
+    <ul class="main_menu_list">
+      <li>
+        <a class="main_menu_link" (click)="testingASS()">···</a>
+        <ul class="main_sub-menu_list" ngClass="{'active_menu': !this.test">
+          <li>
+            <a class="main_sub-menu_link" (click)="createBoard()">Создать новую доску</a>
+          </li>
+          <li>
+            <a class="main_sub-menu_link" (click)="saveBoard()">Создать новое состояние доски</a>
+          </li>
+          <li>
+            <a class="main_sub-menu_link" (click)="returnLastBoard()">Вернуть в исходный вид</a>
+          </li>
+          <li>
+            <a class="main_sub-menu_link">Сравнить состояние досок</a>
+            <ul class="main_sub-sub-menu_list">
+              <li>
+                <a class="main_sub-sub-menu_link_disabled">Выбрать начальный период для сравнения изменений</a>
+              </li>
+              <li><input type="date" class placeholder="Введите дату"></li>
+              <li>
+                <a class="main_sub-sub-menu_link_disabled">Выбрать конечный период для сравнения изменений</a>
+              </li>
+              <li><input type="time" placeholder="Введите дату" /></li>
+              <li><a class="main_sub-sub-menu_link" (click)="compareBoard(boards.date,boards.date)">Выполнить</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav> -->
+<!-- <div class="fixedbutton"> <a> Супер Текст</a></div> -->

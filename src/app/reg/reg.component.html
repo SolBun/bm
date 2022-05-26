@@ -1,0 +1,57 @@
+<!-- <div id="login">
+    <p>Вход в систему </p> <br>
+    <form action="javascript:void(0);" method="get">
+        <fieldset class="clearfix">
+
+            <p><span class="fontawesome-user"></span>
+                <input type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p>
+
+                <p><span class="fontawesome-lock"></span>
+                <input type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p>
+                <p><input type="submit" value="ВОЙТИ"></p>
+            
+        </fieldset>
+      </form>
+    <p>Нет аккаунта? &nbsp;&nbsp;<a href="#">Регистрация</a><span class="fontawesome-arrow-right"></span></p>
+</div> -->
+
+
+<div class="reg_window" [ngClass]="{reg_window_visible:hide}">
+
+    <div class="reg_table reg_table_visible">
+
+        <p class="title">Вход в систему</p>
+
+        <p class="icons">	<mat-icon>account_box</mat-icon> <input id="log" type="text" [(ngModel)]="login" class="login" placeholder="Введите логин" focus> </p>
+        <p class="text_info_log" [ngClass]="{inf_vis:server.ch_log}">Неверно введён логин</p>
+
+        <p class="icons"><mat-icon>lock</mat-icon> <input type="text" [(ngModel)]="password" class="password" placeholder="Введите пароль" (keydown.enter)="success_reg()"></p> 
+        <p class="text_info_pas" [ngClass]="{inf_vis:server.ch_pas}">Неверно введён пароль</p>
+
+        <div class="reg_wrap">
+          <div class="reg_adm_button" (click)="need_reg()">Регистрация</div>
+          
+          <div class="reg_button" [ngClass]="{button_trsrm:button_push}" (click)="success_reg()">ВОЙТИ</div>
+          <!--<p> Нет аккаунта? </p> <mat-icon>keyboard_arrow_right</mat-icon> <div (click)="need_reg()">Регистрация</div> -->
+        <!-- //<input type="file" name="multipleFiles" multiple="multiple" (change)="onFileSelected($event)">/  -->
+        </div>
+    </div>
+  </div> 
+  
+  
+  <div class="reg_window" [ngClass]="{reg_window_visible:server.hide_reg}">
+
+    <div class="reg_table reg_table_visible">
+
+      <p class="title">Регистрация</p>
+
+      <p class="icons">	<mat-icon>account_box</mat-icon> <input type="text" [(ngModel)]="server.login" class="login" placeholder="Логин"> </p>
+      <p class="text_info_log" [ngClass]="{inf_vis:server.ch_log}">{{this.server.reg_mes}}</p>
+
+      <p class="icons"><mat-icon>lock</mat-icon> <input type="text" [(ngModel)]="server.password" class="password" placeholder="Пароль"> </p>
+      <p class="text_info_pas" [ngClass]="{inf_vis:server.ch_pas}">Введите пароль</p>
+
+      <div class="reg_button" [ngClass]="{button_trsrm:button_push}" (click)="regAdmin()">СОЗДАТЬ</div>
+      <!-- <p> Уже есть аккаунт?</p> <div class="reg_adm_button" (click)="need_reg()">Войти</div> -->
+    </div>
+  </div>

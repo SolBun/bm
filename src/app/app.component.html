@@ -1,0 +1,5 @@
+<!-- <app-board *ngIf="this.appServer.testing_reg"></app-board> -->
+<app-reg *ngIf="!this.appServer.statConnect; else CreateModels"></app-reg>
+<ng-template #CreateModels>
+    <app-board ></app-board>
+</ng-template>

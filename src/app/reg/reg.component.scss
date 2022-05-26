@@ -1,0 +1,330 @@
+//@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+//@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
+body {
+	background-color: #cfdae8d0;
+	color: #606468;
+	font-family: 'Roboto';
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+a {
+	color: #606468;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input {
+	border: none;
+	font-family: 'Roboto';
+	font-size: 1em;
+	line-height: 1.5em;
+	padding: 0;
+	-webkit-appearance: none;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix:before, .clearfix:after {
+	display: table;
+	content: "";
+}
+.clearfix:after { clear: both; }
+
+/* ---------- LOGIN ---------- */
+
+#login {
+	margin: 150px auto;
+	width: 280px;
+	/*border: 5px solid #333a44;*/
+	border:  none;
+	border-radius: 15px;
+	padding: 60px;
+	padding-left: 80px;
+	padding-right: 80px;
+	background-color: #dbeafe;
+
+}
+
+#login form {
+	margin-bottom: -25px;
+}
+
+#login form span {
+	background-color: #edf1f5;
+	border-radius: 6px 0px 0px 6px;
+	color: #363b41;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+}
+
+#login form input {
+	height: 50px;
+	outline:none;
+}
+
+#login form input[type="text"], input[type="password"] {
+	background-color: #edf1f5;
+
+	border-radius: 0px 6px 6px 0px;
+	color: #606468;
+	margin-bottom: 1em;
+	padding: 0 16px;
+	width: 198px;
+}
+
+#login form input:focus {
+	color:#606468;
+}
+
+#login form input[type="submit"] {
+	border-radius: 8px;
+	background-color: #ffa658;
+	color: #333a44;
+	font-weight: bold;
+	margin-bottom: 2em;
+	text-transform: uppercase;
+	cursor:pointer;
+	width: 280px;
+}
+
+#login form input[type="submit"]:hover {
+	background-color: #ffa658;
+	box-shadow: 5px 5px 5px 2px rgba(235, 171, 115, 0.74);
+}
+
+#login > p {
+	text-align: center;
+}
+
+#login > p span {
+	padding-left: 5px;
+}
+
+
+//мои старые стили)
+
+:host{
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* position: relative; */
+}
+.message_wrap{
+    padding: 4.7em 2vw 15vw;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-start;    
+    box-sizing: border-box;
+    min-height: 100%;
+}
+.message{
+    max-width: 80vw;
+    background: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    padding: 0.8em 1.4em;
+    border-radius: 1em 1em 1em 0;
+    margin-bottom: 1em;
+}
+.my_message{
+    align-self: flex-end;
+    background: #a4ff7d;
+    border-color: #a4ff7d;
+    border-radius: 1em 1em 0 1em;
+}
+.name{
+    font-size: 1.4em;
+    margin: 0;
+    font-weight: 500;
+    color: #111;
+}
+.text{
+    font-size: 1.4em;
+    font-weight: 300;
+    margin: 0.4em 0;
+    white-space: pre-wrap; /*учёт переноса сток при печати*/
+    word-wrap: break-word;
+}
+.service{
+    font-style: 1em;
+    font-weight: 300;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.my_message .name{
+    display: none;
+}
+.add_window{
+    opacity: 0;
+}
+.reg_window{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #cfdae8d0; //задний фон
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 1s ease;
+    height: 100vh;
+    width: 100%;
+    opacity: 1;
+}
+.reg_window_visible{
+    opacity: 0;
+    z-index: -1;
+}
+.reg_window_visible .reg_table{
+    // transform: translate(50em); /*вот эта херня всё портит, сдвигает весь интерфейс прям в ... ну понятно куда */
+}
+.reg_wrap{
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+.reg_adm_button{ //кнопка регистрация
+  /* position: relative;
+    bottom: 0.5em;
+    right: 2.5em; */
+    font-size: 1.3em;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #333a44;
+    //background-color: #ffa658;
+	//box-shadow: 5px 5px 5px 2px rgba(235, 171, 115, 0.74);
+    
+    background-color: #e3ecf6;
+    box-shadow: 2px 1px 2px #b0b0b0, 5px 5px 3px #cbd7e3, -1px -1px 4px #fff;
+
+  /* position: absolute;
+  bottom: 0.4em;
+  font-size: 4em;
+  width: 1.25em;
+  height: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-weight: 400;
+  color: #394e70;
+  background-color: #e3ecf6;
+  box-shadow: 2px 1px 2px #b0b0b0, 5px 5px 3px #cbd7e3, -1px -1px 4px #fff; */
+  /* box-shadow: 5px 5px 8px #cbd7e3, 0 0 8px #fff, 0 -3px 8px #fff; */
+}
+.reg_table{ //форма
+    transition: all 1s ease;
+    background-color: #dbeafe; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42em;
+    height: 30em;
+    border-radius: 10px;
+}
+.login, .password{ //поля ввода логина и пароля
+    width: 15em;
+    font-size: 1.4em;
+    /* margin-bottom: 1.3em; */
+    padding: 0.4em;
+    border: none;
+    /* border-top: 1px solid #fff;
+    border-left: 1px solid #fff; */
+    color: #606468;
+    background-color: #edf1f5;
+
+	border-radius: 6px 6px 6px 6px;
+    /* box-shadow: 5px 5px 8px #cbd7e3, 0 0 8px #fff, 0 -3px 8px #fff; */
+    /* box-shadow: inset 5px 5px 8px #cbd7e3, inset 0 0 6px #fff, inset 0 -1px 6px #fff; */
+    /* box-sizing: border-box; */
+    box-shadow: -1px -1px 1px #d9e4ee, inset 3px 3px 4px #cbd7e3, inset -3px -3px 4px #f0f5fa, 1px 1px 1px #e2eaf5;
+}
+input {outline:none;}
+::-webkit-input-placeholder { color:#394e70; }
+/* .login:focus::-moz-placeholder {color: #394e70}
+.login:focus:-moz-placeholder {color: #394e70}
+.login:focus:-ms-input-placeholder {color: #394e70} */
+.title{
+    font-size: 1.6em;
+    margin: 0;
+    margin-bottom: 1em;
+}
+.reg_button{ //ВОЙТИ
+    transition: all 0.5s ease;
+    font-size: 1.3em;
+    width: 9em;
+    padding: 0.5em;
+    border-radius: 6px;
+
+    background-color: #ffa658;
+	//box-shadow: 5px 5px 5px 2px rgba(235, 171, 115, 0.74);
+    color: #333a44;
+	font-weight: 500;
+    /* background-color: #e3ecf6; */
+    /* color: #394e70; */
+    /* border-top: 1px solid #fff;
+    border-left: 1px solid #fff; 123 #cbd7e3*/
+    display: flex;
+    justify-content: center;
+    /* box-shadow: 5px 5px 8px #9f3ab7, 0 0 8px #fff, 0 -3px 8px #fff; */
+    box-sizing: border-box;
+}
+.button_trsrm{
+    /* box-sizing: border-box;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff; */
+    box-shadow: none;
+    background-color: #b96f2f;
+	box-shadow: 5px 5px 5px 2px rgba(235, 171, 115, 0.74);
+    /* box-shadow: inset 5px 5px 8px #cbd7e3, inset 0 0 6px #fff, inset 0 -1px 6px #fff; */
+}
+.text_info_log{
+    margin: 0;
+    margin-bottom: 1.3em;
+    color: red;
+    opacity: 1;
+}
+.text_info_pas{
+    margin: 0;
+    margin-bottom: 1.3em;
+    color: red;
+    opacity: 1;
+}
+.inf_vis{
+    opacity: 0;
+}
+
+.icons {
+ //width: 60px;
+ height: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
